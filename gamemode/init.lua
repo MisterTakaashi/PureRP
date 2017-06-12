@@ -16,14 +16,14 @@ for k, v in pairs(modules) do
 	  local infos = util.JSONToTable(file.Read(moduleInfoFile, "LUA"))
 
     -- On test si le module est fait pour le scenario actuel
-    if not table.HasValue(infos.scenarios, PureRP.Config.Scenario) then
+    if not table.HasValue(infos.scenarios, PureRP.Config.Scenario) && not infos.allScenarios then
       if PureRP.Config.Debug then
-        print("Module " .. v .. " inclu")
+        print("Module " .. v .. " non inclu")
       end
       continue
     else
       if PureRP.Config.Debug then
-        print("Module " .. v .. " non inclu")
+        print("Module " .. v .. " inclu")
       end
     end
 
