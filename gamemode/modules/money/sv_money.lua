@@ -6,8 +6,6 @@ function PLAYER:SetMoney(money)
 	net.Start("PureRP_SetMoney")
 		net.WriteDouble(money)
 	net.Send(self)
-	
-	SqlDB.Query("UPDATE sourcerp_players SET money = '"..money.."' WHERE  steamid = '"..self:SteamID().."'")
 end
 
 -- Enregistrement des Net messages

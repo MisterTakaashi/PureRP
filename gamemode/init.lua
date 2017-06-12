@@ -14,6 +14,20 @@ for k, v in pairs(modules) do
   local moduleInfoFile = modulesFolder .. v .. "/module.json"
 	if file.Exists(moduleInfoFile, "LUA") then
 	  local infos = util.JSONToTable(file.Read(moduleInfoFile, "LUA"))
+
+    -- On test si le module est fait pour le scenario actuel
+    if not table.HasValue(infos.scenarios, PureRP.Config.Scenario) then
+      if PureRP.Config.Debug then
+        print("Module " .. v .. " inclu")
+      end
+      continue
+    else
+      if PureRP.Config.Debug then
+        print("Module " .. v .. " non inclu")
+      end
+    end
+
+    -- On ajoute le module a la liste des modules
 		PureRP.modules[v] = infos
 	else
 	  ErrorNoHalt("[PURERP] le fichier module.json est introuvable pour le module "..v.." !\n")

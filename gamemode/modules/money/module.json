@@ -1,3 +1,7 @@
 {
-	"Name": "Money"
+	"Name": "Money",
+	"allScenarios": false,
+	"scenarios": [
+		"pandemic"
+	]
 }
