@@ -1,0 +1,14 @@
+"PureRP"
+{
+	"base"		"sandbox"
+	"title"		"Pure RP"
+  "author"  "MisterTakaashi && Achild0"
+	"maps"		"^rp_"
+	"menusystem"	"1"
+	"workshopid"	"0"
+
+	"settings"
+	{
+		
+	}
+}
