@@ -6,6 +6,12 @@ AddCSLuaFile("modules/hud/cl_hud.lua")
 -- On inclue les fichiers serveur
 include("shared.lua")
 
+-- Inclusion des materials
+resource.AddSingleFile("materials/overlay.vmt")
+resource.AddSingleFile("materials/overlay.vtf")
+resource.AddSingleFile("materials/overlaytest.vmt")
+resource.AddSingleFile("materials/overlaytest.vtf")
+
 -- Inclusion de tous les modules
 local modulesFolder = GM.FolderName .. "/gamemode/modules/"
 PureRP.modules = {}

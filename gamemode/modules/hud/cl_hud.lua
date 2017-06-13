@@ -1,9 +1,9 @@
 print("JE SUIS LE CLIENT !")
 
 local tab = {
-	["$pp_colour_addr"] = -0.3,
-	["$pp_colour_addg"] = -0.3,
-	["$pp_colour_addb"] = -0.2,
+	["$pp_colour_addr"] = -0.1,
+	["$pp_colour_addg"] = -0.1,
+	["$pp_colour_addb"] = -0.05,
 	["$pp_colour_brightness"] = 0,
 	["$pp_colour_contrast"] = 1,
 	["$pp_colour_colour"] = 1,
@@ -13,5 +13,9 @@ local tab = {
 }
 
 function GM:RenderScreenspaceEffects()
-	DrawColorModify( tab ) --Draws Color Modify effect
+  -- Modification des couleurs de la vue
+	DrawColorModify(tab)
+
+  -- Ajout de l'overlay
+  DrawMaterialOverlay("overlay", 0)
 end
