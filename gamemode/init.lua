@@ -5,6 +5,7 @@ AddCSLuaFile("modules/hud/cl_hud.lua")
 
 -- On inclue les fichiers serveur
 include("shared.lua")
+include("classes/player_class.lua")
 
 -- Inclusion des materials
 resource.AddSingleFile("materials/overlay.vmt")
