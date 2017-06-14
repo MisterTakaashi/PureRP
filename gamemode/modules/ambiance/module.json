@@ -1,0 +1,7 @@
+{
+	"Name": "Ambiance",
+	"allScenarios": false,
+	"scenarios": [
+    "pandemic"
+  ]
+}

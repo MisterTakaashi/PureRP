@@ -1,0 +1,7 @@
+{
+	"Name": "Jobs",
+	"allScenarios": false,
+	"scenarios": [
+    "pandemic"
+  ]
+}

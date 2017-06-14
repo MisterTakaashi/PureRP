@@ -1,5 +1,3 @@
-print("JE SUIS LE CLIENT !")
-
 local tab = {
 	["$pp_colour_addr"] = -0.1,
 	["$pp_colour_addg"] = -0.1,
@@ -22,7 +20,3 @@ function GM:RenderScreenspaceEffects()
 	-- Pour les combined
 	-- DrawMaterialOverlay( "effects/combine_binocoverlay.vmt", 0 )
 end
-
--- timer.Simple( 2, function() 
--- 	sound.Play( "npc/metropolice/vo/on2.wav", LocalPlayer():GetPos(), 0, 100, 1 )
---  end )
