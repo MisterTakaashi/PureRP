@@ -1,0 +1,7 @@
+{
+	"Name": "Corpses",
+	"allScenarios": false,
+	"scenarios": [
+    "pandemic"
+  ]
+}

@@ -18,4 +18,11 @@ function GM:RenderScreenspaceEffects()
 
   -- Ajout de l'overlay
   DrawMaterialOverlay("overlay", 0)
+
+	-- Pour les combined
+	-- DrawMaterialOverlay( "effects/combine_binocoverlay.vmt", 0 )
 end
+
+-- timer.Simple( 2, function() 
+-- 	sound.Play( "npc/metropolice/vo/on2.wav", LocalPlayer():GetPos(), 0, 100, 1 )
+--  end )

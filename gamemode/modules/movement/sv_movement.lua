@@ -1,0 +1,5 @@
+-- function GM:PlayerSpawn( ply )
+-- 	ply:SetWalkSpeed(125)
+-- 	ply:SetRunSpeed(300)
+-- 	ply:CrosshairDisable()
+-- end
