@@ -1,7 +1,6 @@
 -- On envoie les fichiers de base au client
 AddCSLuaFile("shared.lua")
 AddCSLuaFile("cl_init.lua")
-AddCSLuaFile("modules/hud/cl_hud.lua")
 
 -- On inclue les fichiers serveur
 include("shared.lua")

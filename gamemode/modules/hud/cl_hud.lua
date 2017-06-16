@@ -105,9 +105,14 @@ hook.Add( "PostDrawTranslucentRenderables", "sh_doordisplay_drawdisplay", functi
 
 			local ct = CurTime()
 
+			owner = ""
+			if door:GetDoorData() then
+				owner = door:GetDoorData().Owner
+			end
+
 		cam.Start3D2D( pos, ang, 0.1 )
 			draw.SimpleTextOutlined(
-				"Club de pute",
+				"Club de pute" .. owner,
 				"DoorDisplayTitleFont",
 				0, 10,
 				Color(255, 255, 255, 255),

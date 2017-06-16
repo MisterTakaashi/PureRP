@@ -23,3 +23,7 @@ function ENTITY:isDoor()
     end
     return false
 end
+
+function ENTITY:GetDoorData()
+  return ENTITY.DoorData
+end
