@@ -2,6 +2,10 @@
 AddCSLuaFile("shared.lua")
 AddCSLuaFile("cl_init.lua")
 
+-- On envoie les fichiers de cofnig
+AddCSLuaFile("config/sh_config.lua")
+AddCSLuaFile("config/scenarios/sh_pandemic.lua")
+
 -- On inclue les fichiers serveur
 include("shared.lua")
 include("classes/player_class.lua")
