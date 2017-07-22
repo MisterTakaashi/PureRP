@@ -1,0 +1,7 @@
+{
+	"Name": "Access Permit",
+	"allScenarios": false,
+	"scenarios": [
+    "pandemic"
+  ]
+}

@@ -1,6 +1,6 @@
 local PLAYER = FindMetaTable("Player")
 
-function PLAYER:SetName(name)
+function PLAYER:SetRPName(name)
   self:SetNWString('rpname', name)
 end
 

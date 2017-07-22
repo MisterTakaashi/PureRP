@@ -1,7 +1,7 @@
-local F1Menu
+local nameMenu
 
 local function openNameMenu()
-  F1Menu = F1Menu or vgui.Create("PureRP_Panel_ChangeName")
+  nameMenu = nameMenu or vgui.Create("PureRP_Panel_ChangeName")
 end
 
 net.Receive("PureRP_ChooseName", openNameMenu)
