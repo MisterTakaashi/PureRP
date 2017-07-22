@@ -2,7 +2,9 @@
 AddCSLuaFile("shared.lua")
 AddCSLuaFile("cl_init.lua")
 
--- On envoie les fichiers de cofnig
+-- On envoie les fichiers de config
+AddCSLuaFile("config/cl_colors.lua")
+AddCSLuaFile("config/cl_fonts.lua")
 AddCSLuaFile("config/sh_config.lua")
 AddCSLuaFile("config/scenarios/sh_pandemic.lua")
 

@@ -1,4 +1,6 @@
 include("shared.lua")
+include("config/cl_colors.lua")
+include("config/cl_fonts.lua")
 
 -- Inclusion des modules côté client
 
