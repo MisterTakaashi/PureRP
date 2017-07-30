@@ -15,8 +15,9 @@ hook.Add("PlayerInitialSpawn", "PureRP_Hook_InitialAPICall", function(ply)
         return
       end
 
-      print("ON LANCE LE HOOK DE CONNECTED !!")
       hook.Run("PureRPPlayerConnected", ply)
     end)
+  else
+    hook.Run("PureRPPlayerConnected", ply)
   end
 end)
