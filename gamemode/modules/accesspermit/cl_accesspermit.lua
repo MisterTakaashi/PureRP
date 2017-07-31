@@ -9,4 +9,6 @@ local function openAccessPermit()
   end
 end
 
+net.Receive("PureRP_OpenAccessPermit", openAccessPermit)
+
 concommand.Add("PureRP_OpenAccessPermit", openAccessPermit)

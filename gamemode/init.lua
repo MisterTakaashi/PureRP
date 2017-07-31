@@ -17,6 +17,7 @@ resource.AddSingleFile("materials/overlay.vmt")
 resource.AddSingleFile("materials/overlay.vtf")
 resource.AddSingleFile("materials/overlaytest.vmt")
 resource.AddSingleFile("materials/overlaytest.vtf")
+resource.AddSingleFile("resource/fonts/VT323-Regular.ttf")
 
 -- Inclusion de tous les modules
 local modulesFolder = GM.FolderName .. "/gamemode/modules/"

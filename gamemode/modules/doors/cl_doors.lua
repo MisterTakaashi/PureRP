@@ -5,14 +5,30 @@ local doors = {}
 function ENTITY:drawOwnableInfo()
   -- local x, y = ScrW() / 2, ScrH() / 2
   if self.DoorData && self.DoorData.Owner then
+    if self.DoorData.ToGov then
+      return "Gouvernement"
+    end
+
     local player = player.GetBySteamID64(self.DoorData.Owner)
     if player then
       local playerName = player:RPName() or "iconnu"
-      return "Bar de " .. playerName
+      return "Propriété de " .. playerName
     end
   end
 
   return "Non loué"
+end
+
+function ENTITY:drawOwnableInfoOpened()
+  if self.DoorData then
+    if self.DoorData.Opened then
+      return "Ouvert"
+    else
+      return "Fermé"
+    end
+  end
+
+  return ""
 end
 
 net.Receive("PureRP_SendDoorsData", function()

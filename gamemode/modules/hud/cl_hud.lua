@@ -119,6 +119,14 @@ hook.Add( "PostDrawTranslucentRenderables", "sh_doordisplay_drawdisplay", functi
 				TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM,
 				1, Color(0, 0, 0, 255)
 			)
+			draw.SimpleTextOutlined(
+				door:drawOwnableInfoOpened(),
+				"DoorDisplayTitleFont",
+				0, 80,
+				Color(255, 255, 255, 255),
+				TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM,
+				1, Color(0, 0, 0, 255)
+			)
 		cam.End3D2D()
 	end
 end)

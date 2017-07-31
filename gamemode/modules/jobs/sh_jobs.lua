@@ -23,10 +23,34 @@ function PureRP.job.Create(className, name, color)
     return color
   end
 
+  function job:IsInGov()
+    local id = tonumber(string.Split(className, "_")[2])
+
+    if table.KeyFromValue(PureRP.Config.Modules.Government, id) then return true end
+
+    return false
+  end
+
   function job:GetSkin()
     for _, config in pairs(PureRP.Config.Modules.Job.skins) do
       if self:GetClassName() == "job_" .. tostring(config.id) then
         return config.skin
+      end
+    end
+  end
+
+  function job:GetWeapons()
+    for _, config in pairs(PureRP.Config.Modules.Job.weapons) do
+      if self:GetClassName() == "job_" .. tostring(config.id) then
+        return config.weapons
+      end
+    end
+  end
+
+  function job:GetStartupMoney()
+    for _, config in pairs(PureRP.Config.Modules.Job.money) do
+      if self:GetClassName() == "job_" .. tostring(config.id) then
+        return config.money
       end
     end
   end
