@@ -1,4 +1,4 @@
-"PureRP"
+"purerp"
 {
 	"base"		"sandbox"
 	"title"		"Pure RP"

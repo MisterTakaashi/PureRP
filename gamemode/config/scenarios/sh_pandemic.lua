@@ -28,3 +28,12 @@ PureRP.Config.Modules.Job.skins = {
   {id = 14, skin = 'models/player/odessa.mdl'},
   {id = 15, skin = 'models/player/odessa.mdl'},
 }
+
+-- Module shipments
+PureRP.Config.Modules.Shipment = {}
+PureRP.Config.Modules.Shipment.spawns = {
+  Vector(1775, -1209, 280),
+  Vector(358, -1538, 280),
+  Vector(-3708, -2276, 280),
+  Vector(-3652, 497, 288)
+}

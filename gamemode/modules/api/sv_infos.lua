@@ -8,4 +8,6 @@ end
 
 concommand.Add("PureRP_RelaunchPureRP", getEventInfo)
 
-hook.Add("InitPostEntity", "PureRP_Hook_FetchEventInfos", getEventInfo)
+hook.Add("InitPostEntity", "PureRP_Hook_FetchEventInfos", function() 
+  timer.Simple(8, getEventInfo)
+end)

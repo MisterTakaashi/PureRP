@@ -4,8 +4,12 @@ local doors = {}
 
 function ENTITY:drawOwnableInfo()
   -- local x, y = ScrW() / 2, ScrH() / 2
-  if self.DoorData then
-     return "Bar de " .. self.DoorData.Owner:Nick()
+  if self.DoorData && self.DoorData.Owner then
+    local player = player.GetBySteamID64(self.DoorData.Owner)
+    if player then
+      local playerName = player:RPName() or "iconnu"
+      return "Bar de " .. playerName
+    end
   end
 
   return "Non loué"
