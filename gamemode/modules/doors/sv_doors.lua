@@ -49,6 +49,16 @@ function ENTITY:SetDoorData(name, owner)
   sendDoorsDataToClient()
 end
 
+function ENTITY:RemoveDoorData()
+  for key, door in pairs(doors) do
+    if (door.EntId == self:EntIndex()) then
+      print("Entity et door trouve !!!")
+      table.remove(doors, key)
+      self.DoorData = nil
+    end
+  end
+end
+
 function ENTITY:OwnDoor(ply)
   if not self:isKeysOwnable() then return false end
 
@@ -80,18 +90,30 @@ hook.Add("PlayerInitialSpawn", "PureRP_Hook_InitialDoorSend", function(ply)
   timer.Simple( 7, function() sendDoorsDataToClient(ply) end)
 end)
 
-hook.Add("PlayerDisconnected", "PureRP_Hook_removeDoorOndisconnect", function(ply)
-  for key, door in pairs(doors) do
-  print("Test de " .. door.EntId)
-    if (door.Owner == ply:SteamID64()) then
-      print("TROUVE !!!! ON SUPPRILMMMMMe !")
+local function removeDoorOndisconnect(ply)
+  local toDelete = {}
 
-      table.remove(doors, key)
+  for key, door in pairs(doors) do
+    if (tostring(door.Owner) == ply:SteamID64()) then
+      table.insert(toDelete, door.EntId)
     end
   end
 
+  for _, entId in pairs(toDelete) do
+    print("O toruve l'entity...")
+    local entity = ents.GetByIndex(entId)
+    print("L'entity est trouvée : " .. tostring(entity))
+    entity:RemoveDoorData()
+  end
+
+  PrintTable(doors)
+
   sendDoorsDataToClient()
-end)
+end
+
+concommand.Add("PureRP_RemoveMyDoors", removeDoorOndisconnect)
+
+hook.Add("PlayerDisconnected", "PureRP_Hook_removeDoorOnDisconnect", removeDoorOndisconnect)
 
 -- Enregistrement des Net messages
 util.AddNetworkString("PureRP_SendDoorsData")

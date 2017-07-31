@@ -16,6 +16,12 @@ function ENTITY:drawOwnableInfo()
 end
 
 net.Receive("PureRP_SendDoorsData", function()
+  for _, door in pairs(doors) do
+    entity = ents.GetByIndex(door.EntId)
+
+    entity.DoorData = nil
+  end
+
   doors = net.ReadTable()
 
   for _, v in pairs(doors) do
@@ -25,7 +31,4 @@ net.Receive("PureRP_SendDoorsData", function()
     -- On set les DoorData pour le côté client
     entity.DoorData = v
   end
-
-  print("RECEPTION DES PORTES")
-  PrintTable(doors)
 end)
