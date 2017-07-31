@@ -2,11 +2,11 @@ PureRP.job = PureRP.job or {}
 
 local PLAYER = FindMetaTable("Player")
 
+local jobs = {}
+
 function PLAYER:GetJob()
 	return jobs[self:GetNWString("ActualJob")]
 end
-
-local jobs = {}
 
 function PureRP.job.Create(className, name, color)
   local job = {}
@@ -21,6 +21,14 @@ function PureRP.job.Create(className, name, color)
 
   function job:GetColor()
     return color
+  end
+
+  function job:GetSkin()
+    for _, config in pairs(PureRP.Config.Modules.Job.skins) do
+      if self:GetClassName() == "job_" .. tostring(config.id) then
+        return config.skin
+      end
+    end
   end
 
   jobs[className] = job
