@@ -87,7 +87,7 @@ hook.Add("KeyPress", "PureRP_Hook_KeyPressUseDoor", function(ply, key)
 end)
 
 hook.Add("PlayerInitialSpawn", "PureRP_Hook_InitialDoorSend", function(ply)
-  timer.Simple( 7, function() sendDoorsDataToClient(ply) end)
+  timer.Simple( 20, function() sendDoorsDataToClient(ply) end)
 end)
 
 local function removeDoorOndisconnect(ply)
@@ -112,6 +112,8 @@ local function removeDoorOndisconnect(ply)
 end
 
 concommand.Add("PureRP_RemoveMyDoors", removeDoorOndisconnect)
+
+concommand.Add("PureRP_AskDoors", sendDoorsDataToClient)
 
 hook.Add("PlayerDisconnected", "PureRP_Hook_removeDoorOnDisconnect", removeDoorOndisconnect)
 
