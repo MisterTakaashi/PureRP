@@ -5,8 +5,10 @@ function PLAYER:SetRPName(name)
 end
 
 hook.Add("PureRPPlayerConnected", "PureRP_Hook_PlayerChooseName", function(ply)
-  net.Start("PureRP_ChooseName")
-  net.Send(ply)
+  if (PureRP.Config.Modules.Name.ChooseOnSpawn) then
+    net.Start("PureRP_ChooseName")
+    net.Send(ply)
+  end
 end)
 
 -- Enregistrement des Net messages
