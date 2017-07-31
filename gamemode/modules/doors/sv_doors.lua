@@ -60,6 +60,7 @@ end
 hook.Add("KeyPress", "PureRP_Hook_KeyPressUseDoor", function(ply, key)
 	if (key == IN_USE) then
     if not ply:GetEyeTrace().Entity:isKeysOwnable() then return end
+    if ply:GetEyeTrace().Entity:GetPos():Distance(ply:GetShootPos()) > 60 then return end
 
     ply:GetEyeTrace().Entity:Fire("open", "", 0)
     ply:GetEyeTrace().Entity:Fire("setanimation", "open", 0)
